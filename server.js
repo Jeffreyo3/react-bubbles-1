@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const CORS = require("cors");
+const morgan = require('morgan')
 
 const app = express();
 const token =
@@ -8,6 +9,7 @@ const token =
 
 app.use(bodyParser.json());
 app.use(CORS());
+app.use(morgan('dev'))
 
 let colors = [
   {
